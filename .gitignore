@@ -1,0 +1,23 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Build
+dist
+build
+.next
+
+# IDE
+.idea
+.vscode
+*.sublime-workspace
+*.sublime-project
+
+# OS
+.DS_Store
+Thumbs.db
