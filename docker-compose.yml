@@ -18,17 +18,17 @@ services:
     ports:
       - "3333:3333"
     environment:
-      - DATABASE_URL=postgresql://postgres:postgres@db:5432/khmissa
+      - DATABASE_URL=postgresql://root:3248@db:5432/khmissa
     depends_on:
       - db
 
   db:
-    image: postgres:16-alpine
+    image: bitnami/postgresql
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=3248
       - POSTGRES_DB=khmissa
     volumes:
       - postgres_data:/var/lib/postgresql/data
