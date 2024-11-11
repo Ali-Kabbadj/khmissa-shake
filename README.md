@@ -1,4 +1,4 @@
-# KhmissaShake
+# 🪬KhmissaShake
 
 A digital platform connecting Moroccan artisans with international designers.
 
