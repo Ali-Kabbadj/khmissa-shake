@@ -20,7 +20,7 @@ A digital platform connecting Moroccan artisans with international designers.
 - TypeScript
 - PostgreSQL
 - Swagger
-- -Prisma/GraphQl
+- Prisma/GraphQl
 
 ## 🚀 Getting Started
 
