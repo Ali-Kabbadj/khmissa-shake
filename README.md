@@ -20,6 +20,7 @@ A digital platform connecting Moroccan artisans with international designers.
 - TypeScript
 - PostgreSQL
 - Swagger
+- -Prisma/GraphQl
 
 ## 🚀 Getting Started
 
@@ -63,7 +64,7 @@ docker-compose up --build
 
 ## 🔧 Environment Variables
 
-### Frontend (.env.local)
+### Frontend (.env)
 
 ```plaintext
 NEXT_PUBLIC_API_URL=http://localhost:3333
@@ -73,8 +74,8 @@ NEXT_PUBLIC_API_URL=http://localhost:3333
 
 ```plaintext
 PORT=3333
-NODE_ENV=development
-DATABASE_URL=postgresql://postgres:postgres@localhost:5432/khmissa
+NODE_ENV=development||prod
+DATABASE_URL=postgresql://username:password@localhost:5433/khmissa?schema=public
 ```
 
 ## 📁 Project Structure
