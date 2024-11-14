@@ -13,7 +13,12 @@ RUN corepack enable
 COPY . .
 
 # Install dependencies
+COPY package.json pnpm-lock.yaml ./
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+
+# Generate Prisma client
+RUN apt-get update -y && apt-get install -y openssl
+RUN pnpm prisma generate --schema=prisma/auth/schema.prisma
 
 # Install OpenSSL
 FROM base AS prisma-studio
@@ -25,4 +30,6 @@ CMD pnpm prisma studio --schema=prisma/auth/schema.prisma
 
 # Run the application
 FROM base
+COPY --from=prod-deps /app/node_modules ./node_modules
+COPY --from=build /app/build /app/build
 CMD ["pnpm", "run", "start:dev"]

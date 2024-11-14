@@ -31,7 +31,7 @@ services:
       NODE_ENV: development
       PRISMA_STUDIO_URL: http://prisma-studio:5555
     ports:
-      - 3000:3000
+      - 8000:8000
     depends_on:
       - postgres
       - prisma-studio
@@ -40,7 +40,6 @@ services:
       - /app/node_modules
       - prisma-data:/app/prisma
     command: pnpm run start:dev
-
 volumes:
   postgres-data:
   prisma-data:
